@@ -1,0 +1,16 @@
+{
+  "name": "linkedin-post-reaction-scraper",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Scrape reactions from LinkedIn posts",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
