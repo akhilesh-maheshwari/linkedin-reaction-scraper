@@ -1,0 +1,54 @@
+{
+  "title": "LinkedIn Post Reaction Scraper",
+  "description": "Scrape reactions from LinkedIn posts",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "posts": {
+      "title": "Posts",
+      "type": "array",
+      "description": "Enter LinkedIn post URLs (e.g. https://www.linkedin.com/posts/... or https://www.linkedin.com/feed/update/...)",
+      "editor": "stringList",
+      "items": {
+        "type": "string"
+      },
+      "prefill": ["https://www.linkedin.com/posts/google_googleio-io25-gemini-activity-7330295765424046080-nSW4"]
+    },
+    "fileName": {
+      "title": "Results File Name",
+      "type": "string",
+      "description": "Name your results file (without extension)",
+      "editor": "textfield",
+      "default": "linkedin-post-reaction-scraper-output"
+    },
+    "maxReactions": {
+      "title": "Maximum number of reactions to scrape per each post",
+      "type": "integer",
+      "description": "Maximum number of reactions to fetch per post",
+      "editor": "number",
+      "default": 10
+    },
+    "reactionTypeFilter": {
+      "title": "Reaction Type Filter",
+      "type": "string",
+      "description": "Filter reactions by type",
+      "editor": "select",
+      "enum": ["ALL", "LIKE", "PRAISE", "EMPATHY", "APPRECIATION", "INTEREST", "ENTERTAINMENT"],
+      "enumTitles": ["All reaction types", "Like", "Praise", "Empathy", "Appreciation", "Interest", "Entertainment"],
+      "prefill": "ALL"
+    },
+    "profileScraperMode": {
+      "title": "Profile Scraper Mode",
+      "type": "string",
+      "description": "Select the profile scraper mode",
+      "editor": "select",
+      "enum": ["short", "main"],
+      "enumTitles": [
+        "Short (no charge for profile details)",
+        "Main - scrape profile details without expanding profile sections ($0.002 per main profile)"
+      ],
+      "prefill": "short"
+    }
+  },
+  "required": ["posts", "fileName"]
+}
