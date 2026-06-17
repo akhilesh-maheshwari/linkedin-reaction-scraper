@@ -1,0 +1,30 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "postUrl",
+          "reactorName",
+          "reactorProfileUrl",
+          "reactionType",
+          "reactorHeadline",
+          "profileMode"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "postUrl":           { "label": "Post URL",            "format": "link" },
+          "reactorName":       { "label": "Reactor Name",        "format": "text" },
+          "reactorProfileUrl": { "label": "Reactor Profile URL", "format": "link" },
+          "reactionType":      { "label": "Reaction Type",       "format": "text" },
+          "reactorHeadline":   { "label": "Reactor Headline",    "format": "text" },
+          "profileMode":       { "label": "Profile Mode",        "format": "text" }
+        }
+      }
+    }
+  }
+}
