@@ -17,8 +17,8 @@ try {
   const serviceName        = 'LinkedIn Post Reaction Scraper';
   const serviceOption1     = 'linkedin-post-reaction';
   const requestSource      = 'LinkedIn_Post_Reaction_Scraper_AP';
-  const boomerangInputUrl  = 'https://PLACEHOLDER.boomerangserver.co.in/webhook/post-reaction-scraper';
-  const boomerangStatUrl   = 'https://PLACEHOLDER.boomerangserver.co.in/webhook/post-reaction-scraper-stats';
+  const boomerangInputUrl  = 'https://linkedinsocial-n8n.boomerangserver.co.in/webhook/reactions-scraper';
+  const boomerangStatUrl   = 'https://linkedinsocial-n8n.boomerangserver.co.in/webhook/request-status';
 
   console.log('Tag Name :', serviceTagName);
   console.log('Service  :', serviceName);
@@ -368,7 +368,7 @@ try {
                 request_id,
                 requestStatus     : 'Error',
                 driveInputLink,
-                boomerangOutputUrl: `https://PLACEHOLDER.boomerangserver.co.in/webhook/post-reaction-scraper-output?request_id=${request_id}`,
+                boomerangOutputUrl: `https://linkedinsocial-n8n.boomerangserver.co.in/webhook/request-status?request_id=${request_id}`,
                 batch_number,
                 request_unique_id,
                 batchFolderId,
@@ -407,7 +407,7 @@ try {
         continue;
       }
 
-      const boomerangOutputUrl = `https://PLACEHOLDER.boomerangserver.co.in/webhook/post-reaction-scraper-output?request_id=${request_id}`;
+      const boomerangOutputUrl = `https://linkedinsocial-n8n.boomerangserver.co.in/webhook/request-status?request_id=${request_id}`;
 
       let outputLink = '';
       try {
