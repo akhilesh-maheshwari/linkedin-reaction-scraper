@@ -8,7 +8,7 @@
       "type": "string",
       "description": "LinkedIn post URL",
       "editor": "textfield",
-      "default": "https://www.linkedin.com/posts/google_googleio-io25-gemini-activity-7330295765424046080-nSW4"
+      "default": "https://www.linkedin.com/posts/shishir-todi-1777561b6_jpmorgan-freshers-jobs-share-7491098621552062464-pTGt/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADRKCzEBy5DUvWpd8xK9PiN5OH4WvMlQq2U"
     },
     "fileName": {
       "title": "Results File Name",
