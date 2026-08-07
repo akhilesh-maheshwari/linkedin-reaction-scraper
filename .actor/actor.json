@@ -1,10 +1,70 @@
 {
   "actorSpecification": 1,
-  "name": "linkedin-post-reaction-scraper",
-  "title": "LinkedIn Post Reaction Scraper",
-  "description": "Scrape reactions from LinkedIn posts by URL",
+  "name": "linkedin-post-scraper",
+  "title": "LinkedIn Post Scraper",
+  "description": "Scrape comments and reactions from LinkedIn posts by URL or post ID",
   "version": "0.0",
   "buildTag": "latest",
   "environmentVariables": {},
-  "dockerfile": "./Dockerfile"
+  "dockerfile": "./Dockerfile",
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "LinkedIn Post Scraper Output",
+    "description": "Scraped LinkedIn profile data of commenters and reactors from a LinkedIn post.",
+    "properties": {
+      "results": {
+        "type": "string",
+        "title": "LinkedIn Post Data",
+        "template": "{{links.apiDefaultDatasetUrl}}/items"
+      }
+    }
+  },
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "publicIdentifier",
+              "linkedInIdentifier",
+              "memberIdentifier",
+              "linkedInUrl",
+              "firstName",
+              "lastName",
+              "headline",
+              "summary",
+              "location",
+              "followerCount",
+              "premium",
+              "is_open_profile",
+              "is_creator",
+              "is_influencer",
+              "is_self",
+              "is_relationship",
+              "websites",
+              "connections_count",
+              "birthdate",
+              "positions",
+              "schools",
+              "skills",
+              "languages",
+              "recommendations",
+              "volunteering_experience",
+              "photoUrl",
+              "backgroundUrl",
+              "request_type",
+              "reaction",
+              "reaction_type",
+              "comment"
+            ]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      }
+    }
+  }
 }
