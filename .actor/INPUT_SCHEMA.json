@@ -16,13 +16,6 @@
       "description": "Name of the output file",
       "editor": "textfield",
       "default": "linkedin-post-reaction-scraper-output"
-    },
-    "maxReactions": {
-      "title": "Maximum number of reactions to scrape per each post",
-      "type": "integer",
-      "description": "Maximum reactions to fetch",
-      "editor": "number",
-      "default": 10
     }
   },
   "required": ["postUrl", "fileName"]
