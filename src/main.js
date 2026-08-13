@@ -520,9 +520,46 @@ try {
   console.log('Completed       :', completedCount);
   console.log('Errors          :', errorCount);
   console.log('Total Charged   : $', totalCharged.toFixed(3));
+  console.log('Total Rows      :', totalRowsDelivered);
   console.log('\nOutput Links:');
   allOutputLinks.forEach((link, i) => console.log(`  Batch ${i + 1} : ${link || 'Failed'}`));
   console.log('════════════════════════════════════');
+
+  // ──────────────────────────────
+  // 9. NOTIFY — UPDATE AMOUNT
+  // ──────────────────────────────
+  console.log('\n📤 Sending final amount update to webhook...');
+  try {
+    const updateRes = await fetch(
+      'https://frontend.boomerangserver.co.in/webhook/Status_and_output_universal_flow',
+      {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal : AbortSignal.timeout(60000),
+        body   : JSON.stringify({
+          work_name         : 'update amount',
+          request_unique_id,
+          userId,
+          runId,
+          time,
+          serviceTagName,
+          service_name      : serviceName,
+          service_option_1  : serviceOption1,
+          request_source    : requestSource,
+          total_charged     : parseFloat(totalCharged.toFixed(3)),
+          total_rows        : totalRowsDelivered,
+          completedBatches  : completedCount,
+          errorBatches      : errorCount,
+          totalBatches      : allBatchResults.length
+        })
+      }
+    );
+    const updateText = await updateRes.text();
+    console.log('Update amount webhook status  :', updateRes.status);
+    console.log('Update amount webhook response:', updateText);
+  } catch (err) {
+    console.log('⚠️ Failed to send amount update webhook:', err.message);
+  }
 
 } catch (err) {
   console.log('❌ Error:', err.message);
