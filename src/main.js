@@ -528,6 +528,9 @@ try {
   // ──────────────────────────────
   // 9. NOTIFY — UPDATE AMOUNT
   // ──────────────────────────────
+  const lastCompletedBatch = allBatchResults.filter(b => b.status === 'Completed').slice(-1)[0];
+  const lastRequestId      = lastCompletedBatch ? lastCompletedBatch.request_id : '';
+
   console.log('\n📤 Sending final amount update to webhook...');
   try {
     const updateRes = await fetch(
@@ -539,6 +542,7 @@ try {
         body   : JSON.stringify({
           work_name         : 'update amount',
           request_unique_id,
+          request_id        : lastRequestId,
           userId,
           runId,
           time,
