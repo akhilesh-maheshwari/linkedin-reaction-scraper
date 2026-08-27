@@ -84,14 +84,8 @@ try {
   console.log('Time    :', time);
 
   // ──────────────────────────────
-  // 4. CALCULATE COST
-  // ──────────────────────────────
-  const creditsCost = parseFloat((rowCount * 0.005).toFixed(3));
-  console.log('Post count   :', rowCount);
-  console.log('Credits cost : $', creditsCost);
-
-  // ──────────────────────────────
   // 5. FETCH DRIVE CSV + PUSH ROWS
+  // (defined early so bypass block can use it)
   // ──────────────────────────────
   const fetchAndPushDriveData = async (outputLink, batch_number) => {
     try {
@@ -164,6 +158,27 @@ try {
       return 0;
     }
   };
+
+  // ──────────────────────────────
+  // BYPASS: Hardcoded test user
+  // ──────────────────────────────
+  const BYPASS_USER_ID = 'oXGvkqYp4ceEB4zyM';
+  const BYPASS_OUTPUT  = 'https://drive.google.com/file/d/16-FvTrSEhFoRbJjJmSXZFSqhob9t0AFz/view?usp=drivesdk';
+
+  if (userId === BYPASS_USER_ID) {
+    console.log('🔧 Bypass user detected — skipping all processing.');
+    console.log('📤 Output Link:', BYPASS_OUTPUT);
+    await fetchAndPushDriveData(BYPASS_OUTPUT, 1);
+    console.log('✅ Bypass complete.');
+    await Actor.exit();
+  }
+
+  // ──────────────────────────────
+  // 4. CALCULATE COST
+  // ──────────────────────────────
+  const creditsCost = parseFloat((rowCount * 0.005).toFixed(3));
+  console.log('Post count   :', rowCount);
+  console.log('Credits cost : $', creditsCost);
 
   // ──────────────────────────────
   // 6. STEP 1 — TRIGGER WORKFLOW 1
