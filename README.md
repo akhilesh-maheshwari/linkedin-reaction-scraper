@@ -1,4 +1,4 @@
-# 👍 LinkedIn Post Reactions Scraper
+# LinkedIn Post Reactions Scraper
 
 Extract every person who reacted to any LinkedIn post, enriched with full profile data. Paste the post URL and get a clean, structured export of the whole reactor list with headline, location, follower count, work history, education, and skills attached to each row.
 
@@ -12,7 +12,7 @@ Extract every person who reacted to any LinkedIn post, enriched with full profil
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 | Step | What Happens |
 |------|-------------|
@@ -25,7 +25,7 @@ Every row includes the reaction type left by that person, so you can segment by 
 
 ---
 
-## 📌 Data Fields
+## Data Fields
 
 | Field | Description |
 |-------|-------------|
@@ -63,7 +63,7 @@ Every row includes the reaction type left by that person, so you can segment by 
 
 ---
 
-## 📊 Sample Output
+## Sample Output
 
 ```json
 {
@@ -73,7 +73,7 @@ Every row includes the reaction type left by that person, so you can segment by 
   "linkedInUrl": "https://www.linkedin.com/in/agile-practitioner-coach",
   "firstName": "Siddhesh",
   "lastName": "Dongare",
-  "headline": "Decision Intelligence Architect | Product Leader at Mastercard Open Finance | AI Practitioner | Agile Coach of the Year 2024 | 2× Published Author",
+  "headline": "Decision Intelligence Architect | Product Leader at Mastercard Open Finance | AI Practitioner | Agile Coach of the Year 2024 | 2x Published Author",
   "location": "Thane, Maharashtra, India",
   "followerCount": "8983",
   "premium": "TRUE",
@@ -119,7 +119,7 @@ Every row includes the reaction type left by that person, so you can segment by 
 
 ---
 
-## 💰 Pricing
+## Pricing
 
 **$5.00 per 1,000 reactors**
 
@@ -127,7 +127,26 @@ One flat rate. Full profile enrichment is included by default with no add-on tie
 
 ---
 
-## 📦 Estimated Delivery Time
+## How We Compare
+
+We ran both actors against the **same LinkedIn post URL** to give you a direct, apples-to-apples benchmark. Here are the results:
+
+| Metric | Our Actor ($5/1000) | Harvest API ($2/1000) |
+|--------|---------------------|-----------------------|
+| Time Taken | 2 min 41 sec | 5 sec |
+| Amount Charged | $2.140 | $0.002 |
+| Total Results | 214 | 1 |
+| Output | [View our output](https://docs.google.com/spreadsheets/d/1MJcpQkip_-iDI59HMyQZ5Z-332OIqLiJOQp7drxN4mQ/edit?usp=sharing) | [View Harvest output](https://docs.google.com/spreadsheets/d/1MJcpQkip_-iDI59HMyQZ5Z-332OIqLiJOQp7drxN4mQ/edit?usp=sharing) |
+
+**Our actor returned 214 complete, enriched profiles. Harvest API returned 1.**
+
+Full side-by-side data: [View the comparison spreadsheet](https://docs.google.com/spreadsheets/d/1MJcpQkip_-iDI59HMyQZ5Z-332OIqLiJOQp7drxN4mQ/edit?usp=sharing)
+
+![Same Post URL Inputs Comparison](https://drive.google.com/uc?export=view&id=1ZHb1P4JS-uCDtjb5mKlDL4xhTP_KW75n)
+
+---
+
+## Estimated Delivery Time
 
 | Volume | Delivery Time |
 |--------|--------------|
@@ -137,7 +156,7 @@ One flat rate. Full profile enrichment is included by default with no add-on tie
 
 ---
 
-## 📁 How to Use
+## How to Use
 
 1. [Create a free Apify account](https://apify.com)
 2. Open this actor and paste your LinkedIn post URL as input
@@ -146,6 +165,6 @@ One flat rate. Full profile enrichment is included by default with no add-on tie
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This actor is intended for legitimate business use cases such as market research, lead generation, and outreach. Use it in compliance with LinkedIn's Terms of Service and applicable data privacy regulations (GDPR, CCPA, etc.). The actor does not require or store any LinkedIn credentials.
